@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class Main10 {
+    static Scanner leer = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Cual es su salario?");
+        double salario = leer.nextDouble();
+
+        deducciones(salario);
+        deduccionesInss(salario);
+    }
+
+    public static void deducciones(double salario) {
+        double ir = 0.0;
+        double inss = 0.0;
+        double sindicato = 0.0;
+
+        double deduccion1;
+        double deduccion2;
+        double deduccion3;
+        double salarioBruto;
+        double salarioNeto;
+
+        if (salario >= 0.01 && salario <= 8333.33) {
+            inss = 0.07;
+            sindicato = 0.01;
+            deduccion2 = salario * inss;
+            deduccion3 = salario * sindicato;
+            System.out.println("No se le cobra ir");
+            salarioBruto = salario - (deduccion2 + deduccion3);
+            salarioNeto = salarioBruto;
+            System.out.println("La deducción por inss es: " + deduccion2);
+            System.out.println("La deducción por sindicato " + deduccion3);
+            System.out.println("El salario neto es: " + salarioNeto);
+
+        } else if (salario >= 8333.34 && salario <= 16666.33) {
+            ir = 0.15;
+            inss = 0.07;
+            sindicato = 0.01;
+            deduccion1 = salario * ir;
+            deduccion2 = salario * inss;
+            deduccion3 = salario * sindicato;
+            salarioBruto = salario - (deduccion1 + deduccion2 + deduccion3);
+            salarioNeto = salarioBruto;
+            System.out.println("El ir es: " + deduccion1);
+            System.out.println("La deducción por inss es: " + deduccion2);
+            System.out.println("La deducción por sindicato " + deduccion3);
+            System.out.println("El salario neto es: " + salarioNeto);
+        } else if (salario >= 16666.34 && salario <= 291666.66) {
+            ir = 0.20;
+            inss = 0.07;
+            sindicato = 0.01;
+            deduccion1 = salario * ir;
+            deduccion2 = salario * inss;
+            deduccion3 = salario * sindicato;
+            salarioBruto = salario - (deduccion1 + deduccion2 + deduccion3);
+            salarioNeto = salarioBruto;
+            System.out.println("El ir es: " + deduccion1);
+            System.out.println("La deducción por inss es: " + deduccion2);
+            System.out.println("La deducción por sindicato " + deduccion3);
+            System.out.println("El salario neto es: " + salarioNeto);
+        } else if (salario >= 29166.67 && salario <= 41666.66) {
+            ir = 0.25;
+            inss = 0.07;
+            sindicato = 0.01;
+            deduccion1 = salario * ir;
+            deduccion2 = salario * inss;
+            deduccion3 = salario * sindicato;
+            salarioBruto = salario - (deduccion1 + deduccion2 + deduccion3);
+            salarioNeto = salarioBruto;
+            System.out.println("El ir es: " + deduccion1);
+            System.out.println("La deducción por inss es: " + deduccion2);
+            System.out.println("La deducción por sindicato " + deduccion3);
+            System.out.println("El salario neto es: " + salarioNeto);
+        } else if (salario >= 41666.67) {
+            ir = 0.30;
+            inss = 0.07;
+            sindicato = 0.01;
+            deduccion1 = salario * ir;
+            deduccion2 = salario * inss;
+            deduccion3 = salario * sindicato;
+            salarioBruto = salario - (deduccion1 + deduccion2 + deduccion3);
+            salarioNeto = salarioBruto;
+            System.out.println("El ir es: " + deduccion1);
+            System.out.println("La deducción por inss es: " + deduccion2);
+            System.out.println("La deducción por sindicato " + deduccion3);
+            System.out.println("El salario neto es: " + salarioNeto);
+        }
+    }
+
+    public static void deduccionesInss(double salario) {
+        double inss = 0.225;
+        double inssPatronal = inss * salario;
+        System.out.println("El inss patronal es: " + inssPatronal);
+    }
+}
